@@ -2,13 +2,54 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Capital Game!</title>
+    <title>20160845 Alim Amanzholov</title>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
     <link href="./capital_game.css" rel="stylesheet" />
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Sniglet">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    
   </head>
   <body>
     <!--Your HTML here-->
+    <h1>Do you know the capital of this country?</h1>
+
+    <iframe
+      id = 'map'
+      width="500"
+      height="400"
+      frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDP1BMvIpAaV5lXKud5MNgq5tWkNLtqs7s
+        &q=Space+Needle,Seattle+WA
+        &language=en" allowfullscreen>
+    </iframe>
+    <br>
+    <table id='myTable'>
+    <tr id="tableHeader">
+      <td class="firstRow">Country</td>
+      <td class="firstRow">Capital</td>
+      <td class="firstRow">Answer</td>
+    </tr>
+    <tr>
+      <td id="pr3__question"></td>
+      <td><input type="text" id="pr3__answer" placeholder="Your answer" autofocus></td>
+      <td><button type="button" id="pr3__submit">See Answer</button></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <input type="radio" name='radioFilter' value='all' checked="checked" id='all'> All  
+        <input type="radio" name='radioFilter' value='correct' id='correct'> Correct Only  
+        <input type="radio" name='radioFilter' value='wrong' id='wrong'> Wrong Only
+        <br> 
+        <button type="button" id="pr3__undo" disabled>Undo</button> 
+        <button type="button" id="pr3__clear" disabled>Clear</button>
+        <button type='button' id='pr3__reset'>Reset</button>
+      </td>
+    </tr>
+    </table>
+
     <script src="jquery/js/jquery-1.9.0.min.js"></script>
     <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
